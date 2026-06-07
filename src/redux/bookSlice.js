@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
+import books from "../data/booksData";
 
 const bookSlice = createSlice({
     name : "book",
     initialState : {
-        items : []
+        items : [...books]
     },
     reducers : {
         addBook : (state,action)=>{

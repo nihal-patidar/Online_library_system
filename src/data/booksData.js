@@ -1,4 +1,4 @@
-export default books = [
+const books = [
   {
     "id": 1,
     "title": "The Great Gatsby",
@@ -200,3 +200,5 @@ export default books = [
     "rating": 4.4
   }
 ]
+
+export default books ;
