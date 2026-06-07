@@ -36,7 +36,6 @@ export default function App() {
         },
       ],
     },
-
     {
       path: "*",
       element: <ErrorPage />,
