@@ -11,7 +11,10 @@ export default function BookDetails() {
   );
 
   if (!selectedBook) {
-    return <h1>Book Not Found</h1>;
+    return <div className="empty-state">
+            <h2>No Books Found 📚</h2>
+            <p>Try another category or search term.</p>
+          </div>;
   }
 
   return (

@@ -17,7 +17,7 @@ export default function CategorySelector() {
       <h3>Trending Categories</h3>
 
       <div className="category-pills">
-        <Link to="/books" className="category-pill">
+        <Link to="/books" className="category-pill" key="all-books">
           All Books
         </Link>
         {categories.map((category) => (
