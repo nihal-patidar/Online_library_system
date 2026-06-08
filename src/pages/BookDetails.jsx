@@ -1,51 +1,46 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import '../styles/index.css'
+import "../styles/index.css";
 export default function BookDetails() {
   const { id } = useParams();
 
   const selectedBook = useSelector((store) =>
-    store.book.items.find(
-      (book) => book.id === Number(id)
-    )
+    store.book.items.find((book) => book.id === Number(id)),
   );
 
   if (!selectedBook) {
-    return <div className="empty-state">
-            <h2>No Books Found 📚</h2>
-            <p>Try another category or search term.</p>
-          </div>;
+    return (
+      <div className="empty-state">
+        <h2>No Books Found 📚</h2>
+        <p>Try another category or search term.</p>
+      </div>
+    );
   }
 
   return (
     <div className="book-details">
+      <div className="back-button-container">
+        <Link to="/books" className="back-button">
+          ← Back
+        </Link>
+      </div>
       <div className="book-details-container">
-        
         {/* Book Cover */}
         <div className="book-cover">
-          <img
-            src={selectedBook.image}
-            alt={selectedBook.title}
-          />
+          <img src={selectedBook.image} alt={selectedBook.title} />
         </div>
 
         {/* Book Information */}
         <div className="book-info">
-          <span className="book-badge">
-            {selectedBook.category}
-          </span>
+          <span className="book-badge">{selectedBook.category}</span>
 
           <h1>{selectedBook.title}</h1>
 
           <h3>{selectedBook.author}</h3>
 
-          <div className="book-rating">
-            ⭐ {selectedBook.rating} / 5
-          </div>
+          <div className="book-rating">⭐ {selectedBook.rating} / 5</div>
 
-          <p className="book-description">
-            {selectedBook.description}
-          </p>
+          <p className="book-description">{selectedBook.description}</p>
 
           {/* Primary Actions */}
           <div className="primary-actions">

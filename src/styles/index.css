@@ -491,6 +491,38 @@ a {
    BOOK INFORMATION
 ========================================================= */
 
+
+.back-button-container {
+  max-width: 1200px;
+  margin: 0 auto 1.5rem;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  text-decoration: none;
+
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
+
+  background: #fff;
+  color: #333;
+
+  font-weight: 600;
+
+  border: 1px solid #e5e7eb;
+
+  transition: all 0.25s ease;
+}
+
+.back-button:hover {
+  transform: translateX(-4px);
+  background: #f8fafc;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
 .book-info {
   flex: 2;
 
