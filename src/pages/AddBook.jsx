@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -83,8 +82,10 @@ export default function AddBook() {
     setErrors({});
 
     // Create new book object
+    const id = Date.now();
+
     const newBook = {
-      id: Date.now(),
+      id,
 
       title: formData.title,
       author: formData.author,
@@ -93,7 +94,7 @@ export default function AddBook() {
 
       rating: Number(formData.rating),
 
-      image: `https://picsum.photos/seed/book-${Date.now()}/300/450`,
+      image: `https://picsum.photos/seed/book-${id}/300/450`,
 
       pages: 250,
       language: "English",
@@ -102,7 +103,7 @@ export default function AddBook() {
 
       reviews: 0,
       price: "$9.99",
-      isbn: `978-${Date.now()}`,
+      isbn: `978-${id}`,
     };
 
     // Add book to Redux store
@@ -130,11 +131,7 @@ export default function AddBook() {
               onChange={handleChange}
             />
 
-            {errors.title && (
-              <span className="error">
-                {errors.title}
-              </span>
-            )}
+            {errors.title && <span className="error">{errors.title}</span>}
           </div>
 
           {/* Author */}
@@ -149,11 +146,7 @@ export default function AddBook() {
               onChange={handleChange}
             />
 
-            {errors.author && (
-              <span className="error">
-                {errors.author}
-              </span>
-            )}
+            {errors.author && <span className="error">{errors.author}</span>}
           </div>
 
           {/* Category */}
@@ -165,43 +158,25 @@ export default function AddBook() {
               value={formData.category}
               onChange={handleChange}
             >
-              <option value="">
-                Select Category
-              </option>
+              <option value="">Select Category</option>
 
-              <option value="Fiction">
-                Fiction
-              </option>
+              <option value="Fiction">Fiction</option>
 
-              <option value="Non-Fiction">
-                Non-Fiction
-              </option>
+              <option value="Non-Fiction">Non-Fiction</option>
 
-              <option value="Sci-Fi">
-                Sci-Fi
-              </option>
+              <option value="Sci-Fi">Sci-Fi</option>
 
-              <option value="Fantasy">
-                Fantasy
-              </option>
+              <option value="Fantasy">Fantasy</option>
 
-              <option value="Mystery">
-                Mystery
-              </option>
+              <option value="Mystery">Mystery</option>
 
-              <option value="Biography">
-                Biography
-              </option>
+              <option value="Biography">Biography</option>
 
-              <option value="Horror">
-                Horror
-              </option>
+              <option value="Horror">Horror</option>
             </select>
 
             {errors.category && (
-              <span className="error">
-                {errors.category}
-              </span>
+              <span className="error">{errors.category}</span>
             )}
           </div>
 
@@ -220,11 +195,7 @@ export default function AddBook() {
               onChange={handleChange}
             />
 
-            {errors.rating && (
-              <span className="error">
-                {errors.rating}
-              </span>
-            )}
+            {errors.rating && <span className="error">{errors.rating}</span>}
           </div>
 
           {/* Description */}
@@ -240,16 +211,11 @@ export default function AddBook() {
             />
 
             {errors.description && (
-              <span className="error">
-                {errors.description}
-              </span>
+              <span className="error">{errors.description}</span>
             )}
           </div>
 
-          <button
-            className="submit-btn"
-            type="submit"
-          >
+          <button className="submit-btn" type="submit">
             Add Book
           </button>
         </form>
@@ -257,4 +223,3 @@ export default function AddBook() {
     </div>
   );
 }
-

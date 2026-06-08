@@ -3,7 +3,7 @@ import "../styles/index.css";
 function BookCard(props) {
   return (
     <div className="book-card">
-      <img src={"https://placehold.co/350x500/f97316/ffffff?text=Book+Cover"} alt="" className="book-image"/>
+      <img src={props.book.image} alt="" className="book-image"/>
       <h3 className="book-title">{props.book.title}</h3>
 
       <p className="book-author">{props.book.author}</p>

@@ -24,7 +24,7 @@ export default function BookDetails() {
         {/* Book Cover */}
         <div className="book-cover">
           <img
-            src={"https://placehold.co/350x500/f97316/ffffff?text=Book+Cover"}
+            src={selectedBook.image}
             alt={selectedBook.title}
           />
         </div>

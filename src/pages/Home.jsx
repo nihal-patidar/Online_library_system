@@ -20,7 +20,7 @@ function Home() {
 
       {/* Popular Books Section */}
       <section>
-        <h2>Popular Books</h2>
+        <h2 style={{ textAlign : "center" , padding : "10px 0px"}}>Popular Books</h2>
 
         <div className="books-container">
           {books &&
