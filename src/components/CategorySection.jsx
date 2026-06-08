@@ -1,41 +1,35 @@
-import { Link } from "react-router"
-import React from "react"
+import { Link } from "react-router-dom";
+import "../styles/index.css";
 
-export default function CategorySelector(){
+const categories = [
+  "Fiction",
+  "Non-Fiction",
+  "Sci-Fi",
+  "Fantasy",
+  "Mystery",
+  "Biography",
+  "Horror",
+];
 
-    return (
-        <section className="categories-section">
-        <h2>Book Categories</h2>
+export default function CategorySelector() {
+  return (
+    <section className="category-selector">
+      <h3>Trending Categories</h3>
 
-        <div className="categories-grid">
-          <Link to="/books/Fiction" className="category-card">
-            📚 Fiction
+      <div className="category-pills">
+        <Link to="/books" className="category-pill">
+          All Books
+        </Link>
+        {categories.map((category) => (
+          <Link
+            key={category}
+            to={`/books/${category}`}
+            className="category-pill"
+          >
+            {category}
           </Link>
-
-          <Link to="/books/Non-Fiction" className="category-card">
-            🧠 Non-Fiction
-          </Link>
-
-          <Link to="/books/Sci-Fi" className="category-card">
-            🚀 Sci-Fi
-          </Link>
-
-          <Link to="/books/Fantasy" className="category-card">
-            🏰 Fantasy
-          </Link>
-
-          <Link to="/books/Mystery" className="category-card">
-            🔍 Mystery
-          </Link>
-
-          <Link to="/books/Biography" className="category-card">
-            👤 Biography
-          </Link>
-
-          <Link to="/books/Horror" className="category-card">
-            👻 Horror
-          </Link>
-        </div>
-      </section>
-    )
+        ))}
+      </div>
+    </section>
+  );
 }

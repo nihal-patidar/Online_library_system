@@ -1,4 +1,4 @@
-import '../styles/BookCard.css'
+import '../styles/index.css'
 function BookCard(props) {
   return (
     <div className="book-card">
