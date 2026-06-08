@@ -715,3 +715,71 @@ a {
 .submit-btn:hover {
   background: var(--primary-dark);
 }
+
+.not-found {
+  min-height: 80vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 2rem;
+}
+
+.not-found-card {
+  background: white;
+
+  padding: 3rem;
+
+  border-radius: 20px;
+
+  text-align: center;
+
+  box-shadow: var(--shadow);
+}
+
+.not-found-card h1 {
+  font-size: 5rem;
+
+  color: var(--primary);
+}
+
+.not-found-card h2 {
+  margin-bottom: 1rem;
+}
+
+.not-found-card p {
+  color: var(--text-light);
+}
+
+.not-found-card code {
+  display: block;
+
+  margin: 1rem 0;
+
+  padding: 0.75rem;
+
+  border-radius: 10px;
+
+  background: #fff7ed;
+
+  color: var(--primary);
+}
+
+.home-btn {
+  display: inline-block;
+
+  margin-top: 1rem;
+
+  padding: 0.9rem 1.5rem;
+
+  border-radius: 10px;
+
+  background: var(--primary);
+
+  color: white;
+}
+
+.home-btn:hover {
+  background: var(--primary-dark);
+}
